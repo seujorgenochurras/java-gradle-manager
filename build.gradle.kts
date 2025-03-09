@@ -19,19 +19,19 @@ tasks.test {
     useJUnitPlatform()
 }
 
-val antlrOutputDirPath = "${layout.buildDirectory.asFile.get().path}/generated-src/antlr/main/java/io/github/seujorgenochurras/generate/antlr"
+val antlrOutputDirPath = "${layout.buildDirectory.asFile.get().path}/generated-src/antlr/main/java"
 
 tasks.generateGrammarSource {
-    outputDirectory = file(antlrOutputDirPath)
+    outputDirectory = file("${antlrOutputDirPath}/io/github/seujorgenochurras/generate/antlr")
 }
 
 sourceSets.main {
 
-    java.srcDir("${layout.buildDirectory.asFile.get().path}/generated-src/antlr/main/java")
+    java.srcDir(antlrOutputDirPath)
 }
 
 idea {
     module {
-        generatedSourceDirs.add(file("${layout.buildDirectory.asFile.get().path}/generated-src/antlr/main/java"))
+        generatedSourceDirs.add(file(antlrOutputDirPath))
     }
 }
