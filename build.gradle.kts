@@ -1,7 +1,6 @@
 plugins {
     id("java")
     antlr
-    idea
 }
 
 repositories {
@@ -26,12 +25,6 @@ tasks.generateGrammarSource {
 }
 
 sourceSets.main {
-
     java.srcDir(antlrOutputDirPath)
 }
 
-idea {
-    module {
-        generatedSourceDirs.add(file(antlrOutputDirPath))
-    }
-}
