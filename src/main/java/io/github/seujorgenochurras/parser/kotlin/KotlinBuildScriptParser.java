@@ -1,10 +1,11 @@
-package io.github.seujorgenochurras.parser;
+package io.github.seujorgenochurras.parser.kotlin;
 
 import io.github.seujorgenochurras.domain.FunctionLiteral;
 import io.github.seujorgenochurras.domain.build.BuildScript;
 import io.github.seujorgenochurras.domain.build.KotlinBuildScript;
 import io.github.seujorgenochurras.domain.dependency.DependencyBlock;
 import io.github.seujorgenochurras.generate.antlr.KotlinParser;
+import io.github.seujorgenochurras.parser.BuildScriptParser;
 import io.github.seujorgenochurras.parser.listener.kotlin.KotlinFunctionListener;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStreamRewriter;

@@ -2,6 +2,7 @@ package io.github.seujorgenochurras.parser;
 
 import io.github.seujorgenochurras.domain.build.BuildScript;
 import io.github.seujorgenochurras.generate.antlr.KotlinLexer;
+import io.github.seujorgenochurras.parser.kotlin.KotlinBuildScriptParser;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 
