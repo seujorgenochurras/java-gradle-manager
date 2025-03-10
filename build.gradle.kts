@@ -12,6 +12,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     antlr ("org.antlr:antlr4:4.13.2")
     implementation ("org.antlr:antlr4-runtime:4.13.1")
+    implementation("org.apache.groovy:groovy:4.0.26")
 }
 
 tasks.test {
