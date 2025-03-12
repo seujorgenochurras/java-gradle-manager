@@ -33,8 +33,4 @@ public class KotlinFunctionListener extends KotlinParserBaseListener {
         functionLiterals.put(functionLiteral.getIdentifier(), functionLiteral);
     }
 
-    @Override
-    public void exitFunctionLiteral(KotlinParser.FunctionLiteralContext ctx) {
-        lastIdentifier = "";
-    }
 }
