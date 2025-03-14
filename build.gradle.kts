@@ -7,12 +7,21 @@ repositories {
     mavenCentral()
 }
 
+val groovyVersion = "4.0.16"
+
+
 dependencies {
+    antlr ("me.sunlan:antlr4:4.13.2.6")
+
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    antlr ("org.antlr:antlr4:4.13.2")
-    implementation ("org.antlr:antlr4-runtime:4.13.1")
-    implementation("org.apache.groovy:groovy:4.0.26")
+    implementation ("org.apache.groovy:groovy:$groovyVersion")
+
+    implementation ("antlr:antlr:2.7.7")
+
+    //TODO publish this to maven nexus
+    implementation(files("src/main/java/lib/groovy.jar"))
+
 }
 
 tasks.test {
