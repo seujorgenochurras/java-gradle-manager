@@ -2,8 +2,7 @@ package io.github.seujorgenochurras.parser.groovy;
 
 
 import io.github.seujorgenochurras.domain.FunctionLiteral;
-import io.github.seujorgenochurras.domain.build.BuildScript;
-import io.github.seujorgenochurras.domain.build.GroovyBuildScript;
+import io.github.seujorgenochurras.domain.BuildScript;
 import io.github.seujorgenochurras.domain.dependency.DependencyBlock;
 import io.github.seujorgenochurras.parser.BuildScriptParser;
 import io.github.seujorgenochurras.parser.listener.groovy.GroovyFunctionListener;
@@ -28,7 +27,7 @@ public class GroovyBuildScriptParser implements BuildScriptParser {
     @Override
     public BuildScript parse(CommonTokenStream tokenStream) {
         init(tokenStream);
-        GroovyBuildScript buildScript = new GroovyBuildScript(rewriter);
+        BuildScript buildScript = new BuildScript(rewriter);
 
         HashMap<String, FunctionLiteral> functionLiterals = getFunctionLiterals();
         DependencyBlock dependencyBlock = new DependencyBlock(functionLiterals.get("dependencies"));

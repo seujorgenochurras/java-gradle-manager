@@ -4,7 +4,6 @@ import io.github.seujorgenochurras.domain.CodeBlock;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.TokenStreamRewriter;
 import org.antlr.v4.runtime.misc.Interval;
-//import org.apache.groovy.parser.antlr4.GroovyParser;
 
 public class GroovyCodeBlock implements CodeBlock {
     private final TokenStreamRewriter rewriter;

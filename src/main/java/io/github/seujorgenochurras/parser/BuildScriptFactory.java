@@ -1,6 +1,6 @@
 package io.github.seujorgenochurras.parser;
 
-import io.github.seujorgenochurras.domain.build.BuildScript;
+import io.github.seujorgenochurras.domain.BuildScript;
 import io.github.seujorgenochurras.generate.antlr.KotlinLexer;
 import io.github.seujorgenochurras.parser.groovy.GroovyBuildScriptParser;
 import io.github.seujorgenochurras.parser.kotlin.KotlinBuildScriptParser;

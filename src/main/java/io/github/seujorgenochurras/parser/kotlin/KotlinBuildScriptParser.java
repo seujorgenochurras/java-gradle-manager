@@ -1,8 +1,7 @@
 package io.github.seujorgenochurras.parser.kotlin;
 
 import io.github.seujorgenochurras.domain.FunctionLiteral;
-import io.github.seujorgenochurras.domain.build.BuildScript;
-import io.github.seujorgenochurras.domain.build.KotlinBuildScript;
+import io.github.seujorgenochurras.domain.BuildScript;
 import io.github.seujorgenochurras.domain.dependency.DependencyBlock;
 import io.github.seujorgenochurras.generate.antlr.KotlinParser;
 import io.github.seujorgenochurras.parser.BuildScriptParser;
@@ -35,10 +34,10 @@ public class KotlinBuildScriptParser implements BuildScriptParser {
 
         FunctionLiteral dependencyFunctionLiteral = functionLiterals.get("dependencies");
         DependencyBlock dependencyBlock = new DependencyBlock(dependencyFunctionLiteral);
-        KotlinBuildScript kotlinBuildScript = new KotlinBuildScript(rewriter);
-        kotlinBuildScript.setDependencyNode(dependencyBlock);
+        BuildScript buildScript = new BuildScript(rewriter);
+        buildScript.setDependencyBlock(dependencyBlock);
 
-        return kotlinBuildScript;
+        return buildScript;
     }
 
     private HashMap<String, FunctionLiteral> getFunctionLiterals() {
