@@ -2,9 +2,11 @@ package io.github.seujorgenochurras.parser;
 
 import io.github.seujorgenochurras.domain.build.BuildScript;
 import io.github.seujorgenochurras.generate.antlr.KotlinLexer;
+import io.github.seujorgenochurras.parser.groovy.GroovyBuildScriptParser;
 import io.github.seujorgenochurras.parser.kotlin.KotlinBuildScriptParser;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.apache.groovy.parser.antlr4.GroovyLexer;
 
 public class BuildScriptFactory {
 
@@ -15,7 +17,10 @@ public class BuildScriptFactory {
     }
 
     public static BuildScript fromGroovyScript(String rawScript) {
-        return null;
+        GroovyLexer groovyLexer = new GroovyLexer(CharStreams.fromString(rawScript));
+        CommonTokenStream tokenStream = new CommonTokenStream(groovyLexer);
+
+        return new GroovyBuildScriptParser().parse(tokenStream);
     }
 
 }
